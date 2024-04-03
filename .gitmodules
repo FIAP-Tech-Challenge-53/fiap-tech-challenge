@@ -1,0 +1,15 @@
+[submodule "repositories/fiap-irango-infra"]
+	path = repositories/fiap-irango-infra
+	url = git@github.com:m4tob/fiap-irango-infra.git
+[submodule "repositories/fiap-irango-auth-service"]
+	path = repositories/fiap-irango-auth-service
+	url = git@github.com:m4tob/fiap-irango-auth-service.git
+[submodule "repositories/fiap-irango-k8s"]
+	path = repositories/fiap-irango-k8s
+	url = git@github.com:m4tob/fiap-irango-k8s.git
+[submodule "repositories/fiap-irango-api"]
+	path = repositories/fiap-irango-api
+	url = git@github.com:m4tob/fiap-irango-api.git
+[submodule "repositories/fiap-irango-database"]
+	path = repositories/fiap-irango-database
+	url = git@github.com:m4tob/fiap-irango-database.git
