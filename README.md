@@ -23,7 +23,7 @@ git submodule update --init --recursive
 ### Dependencies
 First of all, we need create an S3 bucket to store Terraform state. This bucket must be configured in each main.tf file.
 
-We also need create a Secrets Manager with the following ENVs: `SENTRY_DSN`, `DB_HOSTNAME`, `DB_USERNAME`, `DB_PASSWORD`, `REDIS_HOSTNAME`. It will be used in `fiap-irango-k8s` project to deploy API pods.
+We also need create a Secrets Manager with the name `fiap-irango-secrets-api` and the following ENVs: `SENTRY_DSN`, `DB_HOSTNAME`, `DB_USERNAME`, `DB_PASSWORD`, `REDIS_HOSTNAME`. It will be used by some terraform workflows and also in `fiap-irango-k8s` project to deploy API pods.
 
 ### Running Project Locally
 1 - Run `fiap-irango-infra` terraform files
