@@ -41,9 +41,9 @@ We also need create a Secrets Manager with the name `fiap-irango-secrets-api` in
 
 3 - Run `fiap-irango-k8s` terraform files
 
-4 - Build a Docker image in `fiap-irango-api` repository
+4 - Build a Docker image in `fiap-irango-api` repository. Export the Image URI as `IMAGE_URI` env.
 
-5 - Apply `fiap-irango-k8s` kubernetes files passing the image built
+5 - Apply `fiap-irango-k8s` kubernetes passing secrets and `IMAGE_URI` envs using `envsubst` [README.md](`https://github.com/m4tob/fiap-irango-k8s/blob/main/README.md#without-make`).
 
 6 - Run Run `fiap-irango-auth-service` terraform files
 
