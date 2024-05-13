@@ -10,6 +10,8 @@ This repository is a monorepo to iRango project repositories. Proposed as a Tech
 | [fiap-irango-auth-service](https://github.com/m4tob/fiap-irango-auth-service) | Repository to configure AWS Cognito and API Gateway. (Using Terraform as IaC) |
 | [fiap-irango-api](https://github.com/m4tob/fiap-irango-api) | Repository containing iRango API main service |
 
+## [Archictecture Diagrams](./docs/architecture-diagrams.md)
+
 ### Cloning repository
 ```bash
 git clone --recurse-submodules git@github.com:m4tob/fiap-tech-challenge.git
