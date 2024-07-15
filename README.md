@@ -71,7 +71,9 @@ Each repository has at least one workflow file whick is runned with push actions
 
 We also have two releases workflows:
   - [release.yml (order)](https://github.com/FIAP-Tech-Challenge-53/fiap-irango-order-api/blob/main/.github/workflows/release.yml) - Build order-api Docker image and push to ECR Repository.
+  - [release-api.yml (order)](https://github.com/FIAP-Tech-Challenge-53/fiap-irango-k8s/blob/main/.github/workflows/release-api.yml) - Using previous built Docker image, apply Kubernetes api files.
   - [release.yml (payment)](https://github.com/FIAP-Tech-Challenge-53/fiap-irango-payment-api/blob/main/.github/workflows/release.yml) - Build payment-api Docker image and push to ECR Repository.
+  - [release-payment.yml (payment)](https://github.com/FIAP-Tech-Challenge-53/fiap-irango-k8s/blob/main/.github/workflows/release-payment.yml) - Using previous built Docker image, apply Kubernetes api files.
   - [release.yml (cook)](https://github.com/FIAP-Tech-Challenge-53/fiap-irango-cook-api/blob/main/.github/workflows/release.yml) - Build cook-api Docker image and push to ECR Repository.
-  - [release-api.yml](https://github.com/FIAP-Tech-Challenge-53/fiap-irango-k8s/blob/main/.github/workflows/release-api.yml) - Using previous built Docker image, apply Kubernetes api files.
+  - [release-cook.yml (cook)](https://github.com/FIAP-Tech-Challenge-53/fiap-irango-k8s/blob/main/.github/workflows/release-cook.yml) - Using previous built Docker image, apply Kubernetes api files.
     
