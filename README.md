@@ -13,9 +13,9 @@ This repository is a monorepo to iRango project repositories. Proposed as a Tech
 ## Application Repositories
 | Repository | Content |
 | :---:   | :---: |
-| [fiap-irango-order-api](https://github.com/FIAP-Tech-Challenge-53/fiap-irango-order-api) |  |
-| [fiap-irango-payment-api](https://github.com/FIAP-Tech-Challenge-53/fiap-irango-payment-api) |  |
-| [fiap-irango-cook-api](https://github.com/FIAP-Tech-Challenge-53/fiap-irango-cook-api) |  |
+| [fiap-irango-order-api](https://github.com/FIAP-Tech-Challenge-53/fiap-irango-order-api) | Service to handle information related to Consumidor, Produto, and Pedido |
+| [fiap-irango-payment-api](https://github.com/FIAP-Tech-Challenge-53/fiap-irango-payment-api) | Service to handle information related to Pagamento |
+| [fiap-irango-cook-api](https://github.com/FIAP-Tech-Challenge-53/fiap-irango-cook-api) | Service to handle information related to Cooking process |
 
 ## Archictecture Diagrams
 [Archictecture Diagrams](./docs/architecture-diagrams.md)
