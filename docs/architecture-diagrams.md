@@ -20,3 +20,7 @@
 
 ## Auth Service (API Gateway and Amazon Cognito)
 ![fiap-irango-auth-service](https://github.com/FIAP-Tech-Challenge-53/fiap-irango-auth-service/blob/main/docs/fiap-irango-auth-service.png?raw=true)
+
+## SAGA Pattern (Order Flow)
+![fiap-irango-saga-pattern](https://github.com/FIAP-Tech-Challenge-53/fiap-tech-challenge/blob/main/docs/saga_pattern.png?raw=true)
+
