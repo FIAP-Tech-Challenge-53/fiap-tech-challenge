@@ -24,3 +24,25 @@
 ## SAGA Pattern (Order Flow)
 ![fiap-irango-saga-pattern](https://github.com/FIAP-Tech-Challenge-53/fiap-tech-challenge/blob/main/docs/saga_pattern.png?raw=true)
 
+
+### Por que escolhemos usar uma Saga Coreografada
+
+Escolhemos usar uma **saga coreografada** para a comunicação entre os serviços de **pedido**, **cozinha** e **pagamento** por várias razões relacionadas à descentralização e autonomia dos microserviços:
+
+1. **Autonomia dos Microserviços**:
+   - Na saga coreografada, cada serviço reage a eventos emitidos por outros serviços, sem depender de um orquestrador central. Isso proporciona maior autonomia para cada serviço, facilitando o desenvolvimento e a manutenção.
+
+2. **Baixo Acoplamento**:
+   - A comunicação entre os serviços é feita através de eventos, o que reduz o acoplamento entre eles. Isso permite que serviços se comuniquem sem depender diretamente uns dos outros.
+
+3. **Escalabilidade**:
+   - A coreografia permite que cada serviço escale de forma independente, sem a necessidade de um orquestrador central. Isso é especialmente útil em sistemas onde as operações podem crescer significativamente.
+
+4. **Resiliência**:
+   - Cada serviço pode lidar com falhas e eventos de maneira independente. Se um serviço encontrar um problema, ele pode emitir um evento de erro ou compensação, sem que outros serviços sejam diretamente impactados.
+
+5. **Flexibilidade**:
+   - A saga coreografada permite que novos serviços sejam adicionados ao sistema com facilidade, apenas consumindo eventos existentes ou emitindo novos eventos conforme necessário.
+
+Essa abordagem ajuda a manter um sistema modular e flexível, alinhado com os princípios de arquitetura de microserviços.
+
