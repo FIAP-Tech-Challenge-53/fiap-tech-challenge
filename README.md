@@ -33,20 +33,25 @@ git submodule update --init --recursive
 ### Dependencies
 First of all, we need create an S3 bucket to store Terraform state. This bucket must be configured in each main.tf file.
 
-We also need create a Secrets Manager with the name `fiap-irango-secrets-api` in JSON format with the following ENVs: `SENTRY_DSN`, `DB_HOSTNAME`, `DB_USERNAME`, `DB_PASSWORD`, `REDIS_HOSTNAME`. It will be used by some terraform workflows and also in `fiap-irango-k8s` project to deploy API pods. Ex:
+We also need create a Secrets Manager with the name `fiap-irango-secrets-api` in JSON format with the following ENVs: `SENTRY_DSN`, `DB_HOSTNAME`, `DB_USERNAME`, `DB_PASSWORD`, `DB_PAYMENT_HOSTNAME`, `REDIS_HOSTNAME`, `MONGO_HOSTNAME`, `MONGO_DATABASE`, `MONGO_USERNAME`, `MONGO_PASSWORD`, `MONGO_ATLAS_ORG_ID`, `MONGODB_ATLAS_PUBLIC_KEY`, `MONGODB_ATLAS_PRIVATE_KEY`, `PERSONAL_ACCESS_TOKEN`, `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`. It will be used by some terraform workflows and also in `fiap-irango-k8s` project to deploy API pods. Ex:
 ```json
 {
-  "SENTRY_DSN": "xxxxxxxxx",
-  "DB_HOSTNAME": "xxxxxxxxx",
-  "DB_USERNAME": "xxxxxxxxx",
-  "DB_PASSWORD": "xxxxxxxxx",
-  "REDIS_HOSTNAME": "xxxxxxxxx",
-  "MONGO_HOSTNAME": "xxxxxxxxx",
-  "MONGO_USERNAME": "xxxxxxxxx",
-  "MONGO_PASSWORD": "xxxxxxxxx",
-  "MONGO_ATLAS_ORG_ID":  "xxxxxxxxx",
-  "MONGODB_ATLAS_PUBLIC_KEY": "xxxxxxxxx",
-  "MONGODB_ATLAS_PRIVATE_KEY": "xxxxxxxxx"
+  "SENTRY_DSN": "https://public@sentry.example.com/1",
+  "DB_HOSTNAME": "fiap-irango-rds.rds.amazonaws.com",
+  "DB_USERNAME": "root",
+  "DB_PASSWORD": "password",
+  "DB_PAYMENT_HOSTNAME": "fiap-irango-payment-rds.rds.amazonaws.com",
+  "REDIS_HOSTNAME": "fiap-irango-cache.cache.amazonaws.com",
+  "MONGO_HOSTNAME": "fiap-irango-cluster.mongodb.net",
+  "MONGO_DATABASE": "irango_cook",
+  "MONGO_USERNAME": "root",
+  "MONGO_PASSWORD": "password",
+  "MONGO_ATLAS_ORG_ID": "XXXXXXXXXXXXXXXXXXXXXXXX",
+  "MONGODB_ATLAS_PUBLIC_KEY": "public_key",
+  "MONGODB_ATLAS_PRIVATE_KEY": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
+  "PERSONAL_ACCESS_TOKEN": "ghp_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  "AWS_ACCESS_KEY_ID": "XXXXXXXXXXXXXXXXXXXX",
+  "AWS_SECRET_ACCESS_KEY": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 }
 ```
 
@@ -71,7 +76,7 @@ Each repository has at least one workflow file whick is runned with push actions
 
 We also have two releases workflows:
   - [release.yml (order)](https://github.com/FIAP-Tech-Challenge-53/fiap-irango-order-api/blob/main/.github/workflows/release.yml) - Build order-api Docker image and push to ECR Repository.
-  - [release-api.yml (order)](https://github.com/FIAP-Tech-Challenge-53/fiap-irango-k8s/blob/main/.github/workflows/release-api.yml) - Using previous built Docker image, apply Kubernetes api files.
+  - [release-api.yml (order)](https://github.com/FIAP-Tech-Challenge-53/fiap-irango-k8s/blob/main/.github/workflows/release-order.yml) - Using previous built Docker image, apply Kubernetes api files.
   - [release.yml (payment)](https://github.com/FIAP-Tech-Challenge-53/fiap-irango-payment-api/blob/main/.github/workflows/release.yml) - Build payment-api Docker image and push to ECR Repository.
   - [release-payment.yml (payment)](https://github.com/FIAP-Tech-Challenge-53/fiap-irango-k8s/blob/main/.github/workflows/release-payment.yml) - Using previous built Docker image, apply Kubernetes api files.
   - [release.yml (cook)](https://github.com/FIAP-Tech-Challenge-53/fiap-irango-cook-api/blob/main/.github/workflows/release.yml) - Build cook-api Docker image and push to ECR Repository.
